@@ -5,7 +5,9 @@ import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import mongoose, { mongo } from 'mongoose';
 
+// attach router files
 import indexRouter from '../Routes/index';
+import clothingRouter from '../Routes/clothing';
 
 // Express Web App Configuration
 const app = express();
@@ -37,7 +39,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../Client')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
+// create routing through event handling
 app.use('/', indexRouter);
+app.use('/clothing-list', clothingRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) 
