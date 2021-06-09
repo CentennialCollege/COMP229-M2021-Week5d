@@ -39,7 +39,7 @@ function ProcessEditPage(req, res, next) {
         "category": req.body.category,
         "colour": req.body.colour,
         "size": req.body.size,
-        "price": req.body.size
+        "price": req.body.price
     });
     clothing_1.default.updateOne({ _id: id }, updatedClothingItem, {}, (err) => {
         if (err) {
@@ -57,7 +57,7 @@ function ProcessAddPage(req, res, next) {
         "category": req.body.category,
         "colour": req.body.colour,
         "size": req.body.size,
-        "price": req.body.size
+        "price": req.body.price
     });
     clothing_1.default.create(newContact, (err) => {
         if (err) {
