@@ -2,39 +2,24 @@ import express from 'express';
 const router = express.Router();
 export default router;
 
-/* GET home page. */
-router.get('/', function(req, res, next) 
-{
-  res.render('index', { title: 'Home', page: 'home' });
-});
+// instantiate an object of type index controller
+import { DisplayAboutPage, DisplayContactPage, DisplayHomePage, DisplayProjectsPage, DisplayServicesPage } from '../Controllers/index';
 
 /* GET home page. */
-router.get('/home', function(req, res, next) 
-{
-  res.render('index', { title: 'Home', page: 'home'  });
-});
+router.get('/', DisplayHomePage);
+
+/* GET home page. */
+router.get('/home', DisplayHomePage);
 
 /* GET about page. */
-router.get('/about', function(req, res, next) 
-{
-  res.render('index', { title: 'About Us', page: 'about'  });
-});
+router.get('/about', DisplayAboutPage);
 
 /* GET projects page. */
-router.get('/projects', function(req, res, next) 
-{
-  res.render('index', { title: 'Our Projects', page: 'projects'  });
-});
+router.get('/projects', DisplayProjectsPage);
 
 /* GET services page. */
-router.get('/services', function(req, res, next) 
-{
-  res.render('index', { title: 'Our Services', page: 'services'  });
-});
+router.get('/services', DisplayServicesPage);
 
 /* GET contact page. */
-router.get('/contact', function(req, res, next) 
-{
-  res.render('index', { title: 'Contact Us', page: 'contact'  });
-});
+router.get('/contact', DisplayContactPage);
 //module.exports = router;
