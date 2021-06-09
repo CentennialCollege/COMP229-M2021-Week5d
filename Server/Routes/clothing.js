@@ -10,4 +10,7 @@ const clothing_1 = require("../Controllers/clothing");
 router.get('/', clothing_1.DisplayClothingListPage);
 router.get('/add', clothing_1.DisplayAddPage);
 router.get('/edit/:id', clothing_1.DisplayEditPage);
+router.post('/add', clothing_1.ProcessAddPage);
+router.post('/edit/:id', clothing_1.ProcessEditPage);
+router.get('/delete/:id', clothing_1.ProcessDeletePage);
 //# sourceMappingURL=clothing.js.map
